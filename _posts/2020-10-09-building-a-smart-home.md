@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building a Smart Home
+title: "Building a Smart Home"
 ---
 
 # Building a smart home
