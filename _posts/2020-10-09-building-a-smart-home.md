@@ -3,8 +3,6 @@ layout: post
 title: "Building a Smart Home"
 ---
 
-# Building a smart home
-
 For years, I have generally been of the opinion that the "Internet of Things" is mostly a way to introduce a lot of 
 vulnerabilities into a home network for dubious gain. Especially since most smart home systems I had seen involved a number
 of manufacturer specific apps that didn't really seem to communicate together. Why spend extra to have 20 more apps on my 
