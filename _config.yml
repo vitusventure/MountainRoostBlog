@@ -1,2 +1,4 @@
 theme: minima
 show_excerpts: true
+site:
+  title: MountainRoost
