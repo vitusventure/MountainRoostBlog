@@ -1,4 +1,7 @@
 theme: minima
 show_excerpts: true
-site:
-  title: MountainRoost
+title: MountainRoost
+description: A personal blog about things from rock climbing to home automation.
+author:
+  name: John Orndorff
+  email: "johnornd@gmail.com"
