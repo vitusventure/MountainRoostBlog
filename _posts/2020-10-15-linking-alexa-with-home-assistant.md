@@ -31,7 +31,7 @@ When the official documentation gets to "Create an AWS Lambda Function", **STOP*
 
 * From the console, click "Create Stack".
 
-* [Download the template](/assets/HAToAlexaSmartHome.yaml) to your computer, then in the AWS console, for template source, select "Upload a template file" and select the template you just downloaded. Click "Next".
+* [Download the template](/assets/HAtoAlexaSmartHome.yaml) to your computer, then in the AWS console, for template source, select "Upload a template file" and select the template you just downloaded. Click "Next".
 
 * Give the template a name (this is just something for you to recognize it as). In the parameters, fill in the skill ID you created earlier and the publicly accessible URL for your Home Assistance instance. Click "Next".
 
