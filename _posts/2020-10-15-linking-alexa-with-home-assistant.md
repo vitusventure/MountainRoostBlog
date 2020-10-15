@@ -52,7 +52,7 @@ alexa:
     smart_home:
 ```
 
-After that, simple run Device Discovery from your Alexa app, and you should see the devices passed through from Home Assistant!
+After that, simply run Device Discovery from your Alexa app and you should see the devices passed through from Home Assistant!
 
 ## Conclusion
 
