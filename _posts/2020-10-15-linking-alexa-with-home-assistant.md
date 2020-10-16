@@ -32,7 +32,7 @@ When the official documentation gets to "Create an AWS Lambda Function", **STOP*
       * [Create your stack in us-east-1](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://home-assistant-alexa-cloudformation.s3.amazonaws.com/HAtoAlexaSmartHome.yml&stackName=HomeAssistantToAlexaBridge)
    * English (UK), English (IN), German (DE), Spanish (ES) or French (FR)
       * [Create your stack in eu-west-1](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?templateURL=https://home-assistant-alexa-cloudformation.s3.amazonaws.com/HAtoAlexaSmartHome.yml&stackName=HomeAssistantToAlexaBridge)
-   * Japanese and English (AU)
+   * Japanese, English (AU)
       * [Create your stack in us-west-2](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?templateURL=https://home-assistant-alexa-cloudformation.s3.amazonaws.com/HAtoAlexaSmartHome.yml&stackName=HomeAssistantToAlexaBridge)
    * You can also grab the raw template [here](https://home-assistant-alexa-cloudformation.s3.amazonaws.com/HAtoAlexaSmartHome.yml).
 
