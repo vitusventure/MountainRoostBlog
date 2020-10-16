@@ -15,6 +15,28 @@ Home Assistant [provides some instructions](https://www.home-assistant.io/integr
 
 Cloudformation is an AWS service that lets you define AWS resources in a template. You hand a template to the service and it creates all the resources across the various AWS services. The resultant entity is called a "Stack". Once you are done with the resources, simply delete the stack and everything goes away. This is much nicer than manually creating a bunch of stuff. Just upload some YAML, provide some parameters, and all the AWS setup is done!
 
+### Understanding the overall system
+
+Linking your Home Assistant instance to Alexa basically means creating your own Alexa skill. Home Assistant already has the right APIs to talk to Alexa, so the only thing to deploy is basically a bridge between the Alexa service and your instance of Home Assistant. The skill you create will be linked to a Lambda function running on AWS, but all that Lambda function does is repeat the call from the Alexa service to your Home Assistant box, then return the results.
+
+![AlexaBridgeDiagram](/assets/HomeAssistantToAlexaBridge-Diagram.png)
+
+#### Device Discovery
+
+Device discovery is the process where Alexa asks about what devices a skill offers. Once you create your bridge, Alexa will query your Home Assistant instance to discover which devices it offers. Once discovery is done, Alexa will show the devices presented by your Home Assistant instance, and will know to call your custom skill to control those devices.
+
+#### Device control flow
+
+The flow is like this:
+
+* You say a command to a local Echo device (for example, "Turn on the kitchen lights")
+* The Alexa servers know to use your custom skill for controlling the kitchen lights (from discovering these devices earlier)
+* The Alexa servers send a request to your Lambda function to change the state of the Kitchen Lights
+* Your Lambda function calls Home Assistant, which sends the proper command to turn on the lights (over ZWave, or whatever)
+* Home Assistant replies to the Lambda function that the request was successful, which gets passed back to the Alexa service
+
+It is a lot of step but overall not a hugely complicated process. The skill you will make and Cloudformation stack you will deploy basically function as a bridge between the Alexa servers and your local instance of Home Assistant. This bridge allows Alexa to discover devices from your local Home Assistant and then control those devices.
+
 ### Prerequisites
 
 Your instance of Home Assistant must be externally accessible via HTTPS, with a valid SSL certificate. There are plenty of guides available for this online, and the certificate provided by LetsEncrypt will work!
