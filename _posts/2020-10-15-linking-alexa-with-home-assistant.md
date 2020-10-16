@@ -27,20 +27,13 @@ First, follow the [official documentation](https://www.home-assistant.io/integra
 
 When the official documentation gets to "Create an AWS Lambda Function", **STOP** and follow these directions:
 
-* Log into your AWS account, then go to the Cloudformation console in us-east-1 (for English language skills).
+* [Click here to create the stack in your account.](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://home-assistant-alexa-cloudformation.s3.amazonaws.com/HAtoAlexaSmartHome.yml&stackName=HomeAssistantToAlexaBridge) (Only for English language skills)
+  * You can also grab the raw template [here](https://home-assistant-alexa-cloudformation.s3.amazonaws.com/HAtoAlexaSmartHome.yml), useful if you need to deploy in a different region for language support.
 
-* From the console, click "Create Stack".
-
-* [Download the template](/assets/HAtoAlexaSmartHome.yaml) to your computer, then in the AWS console, for template source, select "Upload a template file" and select the template you just downloaded. Click "Next".
-
-* Give the template a name (this is just something for you to recognize it as). In the parameters, fill in the skill ID you created earlier and the publicly accessible URL for your Home Assistance instance. Click "Next".
-
-* Click "Next" on the stack options page.
-
-* In the review page, scroll to the bottom and check the box indicating that Cloudformation may create IAM resources. The template includes an IAM role for your Lambda function to run as. Then click "Create Stack".
-
+* Fill in the two parameters, using your skill ID from earlier and the full URL to your instance of Home Assistant.
+* Check the box to enable IAM resource creation. 
+  * The stack has a single IAM role for the Lambda function, which only has access to CloudWatch Logs.
 * Cloudformation will then provision all the resources you need to run your smart home skill and will automatically add the necessary code and triggers to the Lambda function. Wait for the stack to enter "CREATE_COMPLETE"
-
 * Click the "Outputs" tab for your stack in Cloudformation and copy the FunctionARN key (it should be something like "arn:aws:lambda:us-east-1:1234567890:...")
 
 From here, you can return to the official documentation at "[Configure the Smart Home Service Endpoint](https://www.home-assistant.io/integrations/alexa.smart_home/#configure-the-smart-home-service-endpoint)" to finish the skill setup and setup account linking. Use the ARN you copied from the Cloudformation Outputs as the Smart service endpoint.
@@ -52,7 +45,7 @@ alexa:
     smart_home:
 ```
 
-After that, simply run Device Discovery from your Alexa app and you should see the devices passed through from Home Assistant!
+After that, simple run Device Discovery from your Alexa app, and you should see the devices passed through from Home Assistant!
 
 ## Conclusion
 
