@@ -4,3 +4,4 @@ title: MountainRoost
 description: A personal blog about things from rock climbing to home automation.
 author: John Orndorff
 email: "johnornd@gmail.com"
+include: [".well-known"]
